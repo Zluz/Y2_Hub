@@ -1,0 +1,27 @@
+
+
+http://192.168.1.10:8080/vapp/MyUIServlet
+
+C:\Development\workspaces\20160807_Eclipse_4.6\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\vapp\WEB-INF\images\Spotify_LanaDelRey.jpg
+C:\Development\workspaces\20160807_Eclipse_4.6\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\vapp\META-INF\images
+
+
+Galaxy Tab 4
+	Addr:192.168.1.4, Locale:en_US, Screen:1280x800, Client:1280x667, Browser: "Mozilla/5.0 (Android 5.0.2; Tablet; rv:51.0) Gecko/51.0 Firefox/51.0"
+Galaxy Tab 10.1
+	Addr:192.168.1.4, Locale:en_US, Screen:1280x752, Client:1280x644, Browser:"Mozilla/5.0 (Android 4.0.4; Tablet; rv:51.0) Gecko/51.0 Firefox/51.0"
+
+VM102
+	Addr:192.168.1.200, Locale:en_US, Screen:1920x1015, Client:1050x803, Browser: "Mozilla/5.0 (Windows NT 5.1; rv:51.0) Gecko/20100101 Firefox/51.0"
+
+VM101, internal browser
+	Addr:127.0.0.1, Locale:en_US, Screen:2560x1335, Client:774x601, Browser: "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.2; Win64; x64; Trident/4.0)"
+VM101, firefox
+	Addr:192.168.1.10, Locale:en_US, Screen:2560x1335, Client:1283x1049, Browser:"Mozilla/5.0 (Windows NT 5.2; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0"
+
+Phone
+	Addr:192.168.1.4, Locale:en_US, Screen:360x640, Client:360x568, Browser: "Mozilla/5.0 (Android 6.0.1; Mobile; rv:51.0) Gecko/51.0 Firefox/51.0"
+
+Kitchen
+	Addr:192.168.1.4, Locale:en_US, Screen:600x912, Client:960x1246, Browser: "Mozilla/5.0 (Android 4.4.4; Tablet; rv:51.0) Gecko/51.0 Firefox/51.0"
+
