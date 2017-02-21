@@ -17,7 +17,6 @@ import com.vaadin.server.Page.BrowserWindowResizeListener;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.server.WebBrowser;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Grid;
@@ -26,7 +25,6 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Layout;
-import com.vaadin.ui.Link;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.TextField;
@@ -107,19 +105,19 @@ public class MyUI extends UI {
         
 
         final VerticalLayout vlGraphic = new VerticalLayout();
-        final Component image = getImageComponent();
-        
         vlGraphic.setSizeFull();
-        image.setSizeFull();
         
-//        image.setWidth( "70%" );
-//        vlGraphic.setWidth( "30%" );
-        
-		hlGraphic.addComponent( image );
-        hlGraphic.addComponent( vlGraphic );
-        
-        hlGraphic.setExpandRatio( image, 0.70f );
-        hlGraphic.setExpandRatio( vlGraphic, 0.28f );
+        final Component image = getImageComponent();
+        if ( null!=image ) {
+	        
+	        image.setSizeFull();
+	        
+			hlGraphic.addComponent( image );
+	        hlGraphic.addComponent( vlGraphic );
+	        
+	        hlGraphic.setExpandRatio( image, 0.70f );
+	        hlGraphic.setExpandRatio( vlGraphic, 0.28f );
+        }
 
         
 
@@ -320,11 +318,6 @@ public class MyUI extends UI {
         
         
         
-     // Find the application directory
-//        final String basepath = VaadinService.getCurrent()
-//                          .getBaseDirectory().getAbsolutePath();
-
-        
         // Let the user view the file in browser or download it
 //        final Link link = new Link("Link to the image file", resource);
         
@@ -379,7 +372,8 @@ public class MyUI extends UI {
 								};
 							});
 						} catch ( final UIDetachedException 
-										| RejectedExecutionException e ) {
+										| RejectedExecutionException
+										| IllegalStateException e ) {
 //							e.printStackTrace();
 							bAttached = false;
 						}
@@ -402,18 +396,32 @@ public class MyUI extends UI {
     
     public Component getImageComponent() {
 
-        // Image as a file resource
-        final FileResource resource = new FileResource(
-//        		new File(basepath +
-////                			"/WEB-INF/images/Spotify_LanaDelRey.jpg"));
-//    						"/META-INF/images/Spotify_LanaDelRey.jpg"));
-        		new File( "C:\\Development\\workspaces\\20160807_Eclipse_4.6\\vapp\\files\\Spotify_LanaDelRey.jpg" ) );
+//        // Image as a file resource
+//        final FileResource resource = new FileResource(
+////        		new File(basepath +
+//////                			"/WEB-INF/images/Spotify_LanaDelRey.jpg"));
+////    						"/META-INF/images/Spotify_LanaDelRey.jpg"));
+//        		new File( "C:\\Development\\workspaces\\20160807_Eclipse_4.6\\vapp\\files\\Spotify_LanaDelRey.jpg" ) );
 
+
+        // Find the application directory
+       final String strVBaseDir = 
+    		   VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+       final String strResDir = strVBaseDir + "\\WEB-INF\\classes";
+       
+       final String strSpotifyImage = strResDir + "\\images\\Spotify_LanaDelRey.jpg"; 
+
+       final FileResource resSpotify = new FileResource( new File( strSpotifyImage ) );
+
+        
         // Show the image in the application
 //        final Image image = new Image("Image from file", resource);
-        final Image image = new Image( null, resource );
-
-        return image;
+        if ( null!=resSpotify ) {
+        	final Image image = new Image( null, resSpotify );
+        	return image;
+        } else {
+        	return null;
+        }
     }
     
 
