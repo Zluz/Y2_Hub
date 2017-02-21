@@ -25,3 +25,6 @@ Phone
 Kitchen
 	Addr:192.168.1.4, Locale:en_US, Screen:600x912, Client:960x1246, Browser: "Mozilla/5.0 (Android 4.4.4; Tablet; rv:51.0) Gecko/51.0 Firefox/51.0"
 
+Spotify image details
+	398 x 449 (24bpp) (88.64% aspect ratio)
+	album art (square?), plus song details (name and album etc) caption.
